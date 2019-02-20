@@ -1,15 +1,15 @@
 (ns lib.core
   (:gen-class)
-  (:require [lib.stock])
+  (:require [lib.data])
   (:require [lib.price :refer :all])
-  (:import  [lib.stock Stock]))
+  (:import  [lib.data Stock]))
 
 
 (defn api
   "Call Api here"
   []
-  (def stock (Stock. "apple" "AAPL" 12 11 13))
-  (price false (get stock :symbol)))
+  (def apple (Stock. "apple" "AAPL" (do (data "price" "aapl" false false)) 11 13))
+  (println apple))
 
 (defn -main 
   "call something"
