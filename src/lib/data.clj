@@ -1,6 +1,7 @@
 (ns lib.data
   "All Data Structures")
 
+(defrecord Price [symbol price])
 
-(defrecord Stock [company symbol price low52w high52w])
+(defrecord Stock [company symbol price])
 
