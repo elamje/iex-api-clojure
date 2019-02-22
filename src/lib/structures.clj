@@ -1,4 +1,4 @@
-(ns lib.data
+(ns lib.structures
   "All Data Structures")
 
 (defrecord Price [symbol price])
