@@ -24,8 +24,8 @@
 
 (defn get-price
   "simply get the price synch"
-  [symbol]
-  (data "price" symbol false false))
+  ([symbol] (data "price" symbol false false))
+  ([symbol debug] (data "price" symbol false debug)))
 
 (defn get-stat
   "pass in raw json stats, get key value - key is string value"

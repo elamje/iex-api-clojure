@@ -1,10 +1,10 @@
 # lib
 
-A Clojure library for connecting to real time IEX stock exchange data
+A Clojure library for connecting to real time IEX stock exchange data.
 
 ## Usage
 
-FIXME
+
 
 ## License
 
