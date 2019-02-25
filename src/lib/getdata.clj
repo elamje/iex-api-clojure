@@ -1,6 +1,8 @@
 (ns lib.getdata
   "Get a real time price"
-  (:require [org.httpkit.client :as http])
+  (:require [org.httpkit.client :as http]
+            [clojure.java.io :as io]
+            [clojure.data.csv :as csv])
   (:require [lib.transformations :refer :all]))
 
 (defn data
@@ -26,6 +28,13 @@
   "simply get the price synch"
   ([symbol] (data "price" symbol false false))
   ([symbol debug] (data "price" symbol false debug)))
+
+(defn build-data 
+  "Build up test data set of csv format"
+  [filepath]
+  (with-open [in-file (io/reader filepath)]
+    (doall
+      (def nasdaq (csv/read-csv in-file)))))
 
 (defn get-stat
   "pass in raw json stats, get key value - key is string value"
