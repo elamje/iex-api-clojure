@@ -5,6 +5,7 @@
             [lib.transformations :refer :all]
             [lib.core-test :refer :all]
             [lib.getdata-test :refer :all]
+            [lib.test-data :refer :all]
             [clojure.test :refer :all])
   (:import  [lib.structures Stock Price]))
 
