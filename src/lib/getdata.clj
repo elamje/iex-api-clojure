@@ -34,7 +34,7 @@
   [filepath]
   (with-open [in-file (io/reader filepath)]
     (doall
-      (def nasdaq (csv/read-csv in-file)))))
+      (csv/read-csv in-file))))
 
 (defn get-stat
   "pass in raw json stats, get key value - key is string value"
