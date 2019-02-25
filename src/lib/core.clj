@@ -5,7 +5,6 @@
             [lib.transformations :refer :all]
             [lib.core-test :refer :all]
             [lib.getdata-test :refer :all]
-            [lib.test-data :refer :all]
             [clojure.test :refer :all])
   (:import  [lib.structures Stock Price]))
 
@@ -18,6 +17,14 @@
   (def stats (get-stats "aapl"))
   (println aapl)
   (get-stat stats "marketcap"))
+
+(defn reload
+  "hotswap popular namespaces and dependencies with reload-all"
+  []
+  (use 'lib.core :reload-all)
+  (use 'lib.getdata :reload-all)
+  (use 'lib.getdata-test :reload-all)
+  (println "just reloaded core, getdata, getdata-test"))
 
 (defn test-runner
   "Call Tests on each namespace"

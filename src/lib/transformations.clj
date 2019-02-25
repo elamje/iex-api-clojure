@@ -10,5 +10,5 @@
 (defn symbols2map
   "take the lazy seq from building data and digest to map"
   [data]
-  (def data_reform (into {} data)))
+  (into {} data))
 

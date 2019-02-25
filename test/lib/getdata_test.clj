@@ -1,7 +1,7 @@
 (ns lib.getdata-test
-  (:require [clojure.test :refer :all]
-            [lib.getdata :refer :all]
-            [lib.test-data :refer :all]))
+  (:require [clojure.test :refer :all])
+  (:require [lib.getdata :refer :all]
+            [lib.transformations :refer :all]))
 
 (def apple "aapl")
 
@@ -29,13 +29,15 @@
         (get-beta)
         (string?)))))
 
-
-(deftest test-data
+(deftest test-data-nasdaq
   (testing "Testing data builder"
     (is
-      (-> (build-data "resources/NASDAQ.csv")
-        (empty?)))))
+      (-> "resources/NASDAQ.csv"
+        (build-data)
+        (symbols2map)
+        (empty?)
+        (not)))))
 
 (deftest async-nasdaq-prices
   (testing "Testing all Nasdaq symbol prices async"
-    ))
+    (is (= 1 0))))
