@@ -12,3 +12,7 @@
   [data]
   (into (sorted-map) data))
 
+  (defn symbols2urls
+    "take in list of symbols, output api urls"
+    [symbol-list]
+    (map #(str "https://api.iextrading.com/1.0/stock/" % "/price") symbol-list))
