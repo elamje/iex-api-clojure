@@ -10,5 +10,5 @@
 (defn symbols2map
   "take the lazy seq from building data and digest to map"
   [data]
-  (into {} data))
+  (into (sorted-map) data))
 
