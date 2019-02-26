@@ -40,8 +40,9 @@
   []
   (as-> "resources/NASDAQ.csv" $
     (build-data $)
-    (symbols2map $)
-    (def nasdaq $)))
+    (symbols2map $)))
+
+;dsfadsfds
 
 (defn -main 
   "call something"
