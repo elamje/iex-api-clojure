@@ -10,7 +10,7 @@
     (map http/get $)
     (doall $)
     (doseq [resp $]
-      (println (-> @resp :opts :url) "price: " (:body @resp)))))
+      (println (-> @resp :opts :url) ":" (:body @resp)))))
 
     ; (let [futures (doall (map http/get $))]
     ;     (doseq [resp futures]
