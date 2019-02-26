@@ -5,6 +5,7 @@
             [lib.transformations :refer :all]
             [lib.core-test :refer :all]
             [lib.getdata-test :refer :all]
+            [lib.async-test :refer :all]
             [clojure.test :refer :all])
   (:import  [lib.structures Stock Price]))
 
@@ -24,17 +25,28 @@
   (use 'lib.core :reload-all)
   (use 'lib.getdata :reload-all)
   (use 'lib.getdata-test :reload-all)
-  (println "just reloaded core, getdata, getdata-test"))
+  (use 'lib.async-test :reload-all)
+  (println "just reloaded core, getdata, getdata-test, async-test"))
 
 (defn test-runner
   "Call Tests on each namespace"
   []
   (run-tests 'lib.core-test)
-  (run-tests 'lib.getdata-test))
+  (run-tests 'lib.getdata-test)
+  (run-tests 'lib.async-test))
+
+(defn build-ref-data
+  "Build all global vars needed for testing/repling"
+  []
+  (as-> "resources/NASDAQ.csv" $
+    (build-data $)
+    (symbols2map $)
+    (def nasdaq $)))
 
 (defn -main 
   "call something"
   [& args]
   (api)
+  (build-ref-data)
   (test-runner))
 
