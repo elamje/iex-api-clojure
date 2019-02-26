@@ -6,6 +6,7 @@
             [lib.core-test :refer :all]
             [lib.getdata-test :refer :all]
             [lib.async-test :refer :all]
+            [lib.async :refer :all]
             [clojure.test :refer :all])
   (:import  [lib.structures Stock Price]))
 
@@ -26,7 +27,8 @@
   (use 'lib.getdata :reload-all)
   (use 'lib.getdata-test :reload-all)
   (use 'lib.async-test :reload-all)
-  (println "just reloaded core, getdata, getdata-test, async-test"))
+  (use 'lib.async :reload-all)
+  (println "just reloaded core, getdata, getdata-test, async-test, async"))
 
 (defn test-runner
   "Call Tests on each namespace"
