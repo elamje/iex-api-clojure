@@ -37,7 +37,3 @@
         (symbols2map)
         (empty?)
         (not)))))
-
-(deftest async-nasdaq-prices
-  (testing "Testing all Nasdaq symbol prices async"
-    (is (= 1 0))))
