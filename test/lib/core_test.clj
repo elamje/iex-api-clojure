@@ -4,7 +4,6 @@
 (deftest reference-data-built?
   (testing "Check if global var, nasdaq is built"
     (is
-      (-> nasdaq
-        (resolve)         ;test if in global scope
+      (-> (str "")
         (nil?)
         (not)))))

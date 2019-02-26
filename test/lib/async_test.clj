@@ -5,4 +5,9 @@
 (deftest async-price-test
   (testing "Get All nasdaq prices Async"
     (is
-      (let [list (into [](take 2 nasdaq))]))))
+      (let [syms (list 'aapl 'goog)]
+        (-> syms
+          (async-prices)
+          (println)
+          (nil?)
+          (not))))))
