@@ -8,6 +8,5 @@
       (let [syms (list 'aapl 'goog)]
         (-> syms
           (async-prices)
-          (println)
           (nil?)
           (not))))))
