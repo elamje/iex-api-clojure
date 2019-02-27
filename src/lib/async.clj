@@ -2,11 +2,11 @@
   (:require [org.httpkit.client :as http]
             [lib.transformations :refer :all]))
 
-(defn async-prices
+(defn async-data
   "query multiple prices async and concat results"
-  [symbol-list]
+  [symbol-list type]
   (as-> symbol-list $
-    (symbols2urls $)
+    (symbols2urls $ type)
     (map http/get $)
     (doall $)
     (doseq [resp $]
