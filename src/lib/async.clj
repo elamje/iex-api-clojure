@@ -12,8 +12,5 @@
     (doseq [resp $]
       (println (-> @resp :opts :url) ":" (:body @resp)))))
 
-    ; (let [futures (doall (map http/get $))]
-    ;     (doseq [resp futures]
-    ;       (println (-> @resp :opts :url) "status: " (:body @resp))))))
 
   
