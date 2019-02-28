@@ -13,6 +13,6 @@
   (into (sorted-map) data))
 
   (defn symbols2urls
-    "take in list of symbols, output api urls, optional 2nd param, default price"
+    "take in list of symbols, output api urls, optional type param, default price"
     ([symbol-list] (map #(str "https://api.iextrading.com/1.0/stock/" % "/price") symbol-list))
     ([symbol-list type] (map #(str "https://api.iextrading.com/1.0/stock/" % "/" type) symbol-list)))
