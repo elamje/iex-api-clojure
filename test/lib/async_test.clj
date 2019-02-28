@@ -3,6 +3,7 @@
   (:require [lib.async :refer :all]))
 
 (deftest async-data-test
+
   (testing "Get random subset NASDAQ Async info and prices"
     (is ;Info/Stats
       (let [syms (list 'aapl 'goog)]
