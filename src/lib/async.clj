@@ -10,7 +10,8 @@
     (map http/get $)
     (doall $)
     (doseq [resp $]
-      (println (-> @resp :opts :url) ":" (:body @resp)))))
+      (println (-> @resp :opts :url) ":" (:body @resp))))
+  false)
 
 
   
