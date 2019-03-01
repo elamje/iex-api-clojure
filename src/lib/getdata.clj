@@ -36,6 +36,13 @@
     (doall
       (csv/read-csv in-file))))
 
+(defn build-ref-data
+  "Build all global vars needed for testing/repling"
+  []
+  (as-> "resources/NASDAQ.csv" $
+    (build-data $)
+    (symbols2map $)))
+
 (defn get-stat
   "pass in raw json stats, get key value - key is string value"
   [stats key]

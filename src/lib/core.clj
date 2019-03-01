@@ -37,19 +37,9 @@
   (run-tests 'lib.getdata-test)
   (run-tests 'lib.async-test))
 
-(defn build-ref-data
-  "Build all global vars needed for testing/repling"
-  []
-  (as-> "resources/NASDAQ.csv" $
-    (build-data $)
-    (symbols2map $)))
-
-;dsfadsfds
-
 (defn -main 
   "call something"
   [& args]
   (api)
-  (build-ref-data)
   (test-runner))
 
