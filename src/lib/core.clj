@@ -28,7 +28,8 @@
   (use 'lib.getdata-test :reload-all)
   (use 'lib.async-test :reload-all)
   (use 'lib.async :reload-all)
-  (println "just reloaded core, getdata, getdata-test, async-test, async"))
+  (use 'lib.streamquotes :reload-all)
+  (println "just reloaded core, getdata, getdata-test, async-test, async, streamquotes"))
 
 (defn test-runner
   "Call Tests on each namespace"
