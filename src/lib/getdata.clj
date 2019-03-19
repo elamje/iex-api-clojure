@@ -115,8 +115,17 @@
   ([symbol] (get-12m-trail-eps symbol false)) ;default to synchronous
   ([symbol async] (data "stats?filter=ttmEPS" symbol async false)))
 
+(defn get-ebitda
+  "get EBITDA, json"
+  ([symbol] (get-ebitda symbol false)) ;default to synchronous
+  ([symbol async] (data "stats?filter=EBITDA" symbol async false)))
+
+(defn get-revenue
+  "get revenue, json"
+  ([symbol] (get-revenue symbol false)) ;default to synchronous
+  ([symbol async] (data "stats?filter=revenue" symbol async false)))
+
 ;NEXT
-; EBITDA
 ; revenue
 ; day50MovingAvg
 ; institutionPercent
