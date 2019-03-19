@@ -37,7 +37,7 @@
       (csv/read-csv in-file))))
 
 (defn build-ref-data
-  "Build all global vars needed for testing/repling"
+  "Build all global vars needed for testing/repling -> output to nasdaq variable"
   []
   (as-> "resources/NASDAQ.csv" $
     (build-data $)

@@ -8,7 +8,5 @@
   (as-> symbol-list $
     (symbols2urls $ type)
     (map http/get $)
-    (into {} (for [resp $] [(-> @resp :opts :url) (:body @resp)] ))))
-
-
-  
+    (for [resp $] [(-> @resp :opts :url) (:body @resp)] )
+    (into {} $)))
