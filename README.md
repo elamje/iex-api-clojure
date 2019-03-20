@@ -1,6 +1,12 @@
-# lib
+# iex-api-clojure
 
 A Clojure library for connecting to near, real time IEX stock exchange data. Uses the http-kit library
+
+# Contributing 
+
+getdata.clj contains a long list of TODO items, so feel free to make a pull request.  
+
+If you have any tips for optimization or coding style, please make an issue describing it:)  
 
 ## License
 
