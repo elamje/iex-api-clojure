@@ -28,7 +28,8 @@
   (use 'lib.getdata-test :reload-all)
   (use 'lib.async-test :reload-all)
   (use 'lib.async :reload-all)
-  (println "just reloaded core, getdata, getdata-test, async-test, async"))
+  (use 'lib.streamquotes :reload-all)
+  (println "just reloaded core, getdata, getdata-test, async-test, async, streamquotes"))
 
 (defn test-runner
   "Call Tests on each namespace"
@@ -37,19 +38,9 @@
   (run-tests 'lib.getdata-test)
   (run-tests 'lib.async-test))
 
-(defn build-ref-data
-  "Build all global vars needed for testing/repling"
-  []
-  (as-> "resources/NASDAQ.csv" $
-    (build-data $)
-    (symbols2map $)))
-
-;dsfadsfds
-
 (defn -main 
   "call something"
   [& args]
   (api)
-  (build-ref-data)
   (test-runner))
 

@@ -8,10 +8,5 @@
   (as-> symbol-list $
     (symbols2urls $ type)
     (map http/get $)
-    (doall $)
-    (doseq [resp $]
-      (println (-> @resp :opts :url) ":" (:body @resp))))
-  false)
-
-
-  
+    (for [resp $] [(-> @resp :opts :url) (:body @resp)] )
+    (into {} $)))

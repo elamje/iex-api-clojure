@@ -36,6 +36,13 @@
     (doall
       (csv/read-csv in-file))))
 
+(defn build-ref-data
+  "Build all global vars needed for testing/repling -> output to nasdaq variable"
+  []
+  (as-> "resources/NASDAQ.csv" $
+    (build-data $)
+    (symbols2map $)))
+
 (defn get-stat
   "pass in raw json stats, get key value - key is string value"
   [stats key]
@@ -107,6 +114,7 @@
   "get 12 month trailing EPS, json"
   ([symbol] (get-12m-trail-eps symbol false)) ;default to synchronous
   ([symbol async] (data "stats?filter=ttmEPS" symbol async false)))
+
 
 (defn get-symbol
   "get symbol of symbol? No do nothing")

@@ -5,11 +5,9 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [ [org.clojure/clojure "1.10.0"]
                   [http-kit "2.3.0"]
-                  ; if home uncomment these
-                  ; [org.clojure/data.json "0.2.6"]
-                  ; [org.clojure/data.csv "0.1.4"]
-                  ; [org.clojure/core.async "0.4.490"]
+                  [org.clojure/data.json "0.2.6"]
+                  [org.clojure/data.csv "0.1.4"]
+                  [org.clojure/core.async "0.4.490"]
                 ]
-  :resource-paths ["maven_repo/data.json-0.2.6.jar" "maven_repo/data.csv-0.1.2.jar" "maven_repo/core.async-0.4.490.jar"]
   :main lib.core
   :repl-options {:init-ns lib.core})
