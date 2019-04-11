@@ -108,14 +108,20 @@
   ([symbol] (get-12m-trail-eps symbol false)) ;default to synchronous
   ([symbol async] (data "stats?filter=ttmEPS" symbol async false)))
 
-;NEXT
-; EBITDA
-; revenue
-; day50MovingAvg
-; institutionPercent
-; ttmEPS
+(defn get-symbol
+  "get symbol of symbol? No do nothing")
+
+(defn get-short-interest
+  "get short interest, json"
+  ([symbol] (get-short-interest false)) ; default to synchronous
+  ([symbol async] (data "stats?filter=shortInterest" symbol async false)))
+
+(defn get-short-date
+  "get short date"
+  ([symbol] (get-short-date false)) ; default to synchronous
+  ([symbol async] (data "stats?filter=shortDate" symbol async false)))
 ;TODO
-; symbol
+; for future functions, try to write a macro to generate this code. 
 ; shortInterest
 ; shortDate
 ; dividendRate
