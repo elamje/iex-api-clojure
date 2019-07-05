@@ -2,7 +2,11 @@
 
 A Clojure library for connecting to near, real time IEX stock exchange data. Uses the http-kit library
 
+Sadly, IEX has chosen to deprecate most data that was available at the time I made this. Now the library, is only capable of real time quotes. 
+
 # Contributing 
+
+You may contribute, however, most of the data that was free, is now behind a paid account wall.
 
 getdata.clj contains a long list of TODO items, so feel free to make a pull request.  
 

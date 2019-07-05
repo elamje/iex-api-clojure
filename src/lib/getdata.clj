@@ -8,7 +8,7 @@
 (defn data
   "Get Price, pass in [(asynch t/f)(symbol Stock.symbol)(type e.g. price)]"
   [type symbol async debug]
-  (let [url (str "https://api.iextrading.com/1.0/stock/" symbol "/" type)]
+  (let [url (str "https://api.iextrading.com/1.0/tops/last?symbols=" symbol)]
     (if async
       ; asynchronous
       (http/get url {:timeout 400}
@@ -26,8 +26,8 @@
 
 (defn get-price
   "simply get the price synch"
-  ([symbol] (data "price" symbol false false))
-  ([symbol debug] (data "price" symbol false debug)))
+  ([symbol] (data "last" symbol false false))
+  ([symbol debug] (data "last" symbol false debug)))
 
 (defn build-data 
   "Build up test data set of csv format"
@@ -116,8 +116,10 @@
   ([symbol async] (data "stats?filter=ttmEPS" symbol async false)))
 
 
-(defn get-symbol
-  "get symbol of symbol? No do nothing")
+
+;; (defn get-symbol
+;;   "get symbol of symbol? No do nothing"
+;;   )
 
 (defn get-short-interest
   "get short interest, json"
